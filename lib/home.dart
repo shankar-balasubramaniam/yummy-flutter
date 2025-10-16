@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'components/theme_button.dart';
 import 'components/color_button.dart';
 import 'constants.dart';
+import 'components/category_card.dart';
+import 'models/food_category.dart';
 
 class Home extends StatefulWidget {
   const Home({
@@ -43,9 +45,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final pages = [
-      // TODO: Replace with Category Card
-      Container(
-        color: Colors.red,
+      Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 300),
+          child: CategoryCard(category: categories[0]),
+        ),
       ),
       // TODO: Replace with Post Card
       Container(
